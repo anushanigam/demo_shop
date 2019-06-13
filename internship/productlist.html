@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: black;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+    #a:hover,#b:hover,#c:hover,#d:hover,#e:hover,#f:hover{
+        border: 2px solid black;
+        
+    }
+     #g:hover,#h:hover,#i:hover,#j:hover,#k:hover,#l:hover{
+        background-color: deeppink;
+         color: white;
+        
+    }
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 4px;
+	left: 4px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+    
+</style>
+<body>
+
+<div class="container-fluid">
+  
+  <div class="row">
+    <div class="col-sm-2" style="top: 150px; ">
+      <div id="one">
+    <h5>CATEGORIES</h5>
+        </div>
+       
+<div class="dropdown">
+  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white;color: black;border: 1px solid white;">
+    Women
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <button class="dropdown-item" type="button">Ethinic wear</button>
+    <button class="dropdown-item" type="button">Western wear</button>
+    <button class="dropdown-item" type="button">Footwear</button>
+  </div>
+</div>
+       <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white;color: black;border: 1px solid white;">
+    Men
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <button class="dropdown-item" type="button">Ethinic wear</button>
+    <button class="dropdown-item" type="button">Western wear</button>
+    <button class="dropdown-item" type="button">Footwear</button>
+  </div>
+</div>
+       <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white;color: black;border: 1px solid white">
+    Kids
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <button class="dropdown-item" type="button">Ethinic wear</button>
+    <button class="dropdown-item" type="button">Western wear</button>
+    <button class="dropdown-item" type="button">Footwear</button>
+  </div>
+</div><br><br>
+        
+         <div id="two">
+            <h5>REFINE BY</h5><br>
+            <h5><b>Price</b></h5>
+   <div class="slidecontainer">
+  <input type="range" min="$1" max="$100" value="$50" class="slider" id="myRange">
+  <p>Price:<span id="demo"></span></p>
+</div>
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+            
+        </div> <br><br>
+        <div id="three">
+            <h5><b>Color</b></h5>
+            <div class="row">
+  <div class="col-sm-2"  >
+     <div id="f"  style="height: 15px; width:15px; background-color:blueviolet; border-radius:50%;"></div>
+      
+  </div>
+  <div class="col-sm-2">
+      <div id="a"  style="height:15px; width:15px; background-color: crimson; border-radius:50%;"></div>
+  </div>
+  <div class="col-sm-2" >
+      <div id="b"  style="height:15px; width:15px; background-color: forestgreen; border-radius:50%;"></div>
+      
+  </div>
+  <div class="col-sm-2" >
+      <div id="c"  style="height: 15px; width:15px; background-color: aqua; border-radius:50%;"></div>
+  </div>
+  <div class="col-sm-2" >
+      <div id="d"  style="height: 15px; width:15px;background-color: grey; border-radius:50%;"></div>
+  </div>
+  <div class="col-sm-2" >
+      <div id="e"  style="height: 15px; width:15px; background-color:orange; border-radius:50%;"></div>
+  </div>
+</div><br><br>
+      
+       <div id="four">
+           <h5><b>Size</b></h5>
+            <div class="row">
+             <div class="col-sm-2"  >
+     <div id="g"  style="height: 30px; width:30px; border: 0px solid grey; border-radius:50%;"><centre><h6 style="padding-left: 5px; padding-top: 3px;">XS</h6></centre></div>
+      
+  </div>
+  <div class="col-sm-2">
+      <div id="h"  style="height:30px; width:30px; border: 0px solid grey; border-radius:50%;"><centre><h6 style="padding-left: 8px; padding-top: 3px;">S</h6></centre></div>
+  </div>
+  <div class="col-sm-2" >
+      <div id="i"  style="height:30px; width:30px; border: 0px solid grey; border-radius:50%;"><centre><h6 style="padding-left: 5px; padding-top: 3px;">M</h6></centre></div>
+      
+  </div>
+  <div class="col-sm-2" >
+      <div id="j"  style="height: 30px; width:30px;border: 0px solid grey; border-radius:50%;"><centre><h6 style="padding-left: 8px; padding-top: 3px;">L</h6></centre></div>
+  </div>
+  <div class="col-sm-2" >
+      <div id="k"  style="height: 30px; width:30px;border: 0px solid grey; border-radius:50%;"><centre><h6 style="padding-left: 5px; padding-top: 3px;">XL</h6></centre></div>
+  </div>
+  <div class="col-sm-2" >
+      <div id="l"  style="height: 30px; width:30px; border: 0px solid grey; border-radius:50%;"><centre><h6 style="padding-left: 0px; padding-top: 3px;">XXL</h6></centre></div>
+  </div>
+           
+       </div>
+        </div><br><br>
+        <div id="five">
+            <h5><b>Brand</b></h5>
+            <label class="container">Dressberry
+  <input type="radio" checked="checked" name="radio">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Vero moda
+  <input type="radio" name="radio">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Puma
+  <input type="radio" name="radio">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Adidas
+  <input type="radio" name="radio">
+  <span class="checkmark"></span>
+</label>
+
+        </div> 
+        </div>
+        
+    </div>
+   
+    <div class="col-sm-10" style=";top:150px;">
+        <div class="row">
+  <div class="col-sm-4">
+  <div id="pic1">
+  <img src="1.jpg" alt="img" style="height: 250px;width: 80%; ">
+      </div>
+      <div id="details">
+          <h6>White plazo with top</h6>
+          <h6><b>Rs.1635</b></h6>
+      </div>
+      <div id="pic11">
+          <img src="5.jpg"  alt="img" style="height: 250px;width: 80%; ">
+      </div>
+      <div id="details">
+          <h6>Dressberry red dress</h6>
+          <h6><b>Rs.1140</b></h6>
+      </div>
+       <div id="pic12">
+  <img src="8.jpg" alt="img" style="height: 250px;width: 80%; ">
+      </div>
+      <div id="details">
+          <h6>Blue dress</h6>
+          <h6><b>Rs.945</b></h6>
+      </div>
+  </div>
+  <div class="col-sm-4">
+  <div id="pic2">
+  <img src="2.jpg" alt="img" style="height: 250px;width: 80%; ">
+      </div>
+      <div id="details">
+          <h6>Blue strip dress</h6>
+          <h6><b>Rs.1545</b></h6>
+      </div>
+       <div id="pic21">
+  <img src="6.jpg" alt="img" style="height: 250px;width: 80%; ">
+      </div>
+      <div id="details">
+          <h6>Blue strip dress</h6>
+          <h6><b>Rs.1245</b></h6>
+      </div>
+       <div id="pic22">
+  <img src="9.jpg" alt="img" style="height: 250px;width: 80%; ">
+      </div>
+      <div id="details">
+          <h6>White long dress</h6>
+          <h6><b>Rs.1045</b></h6>
+      </div>
+    </div>
+  <div class="col-sm-4">
+  <div id="pic3">
+  <img src="3.jpg" alt="img" style="height: 250px;width: 80%; "> 
+      </div>
+  
+  <div id="details">
+  <h6>white lace top</h6>
+ <h6><b>Rs.925</b></h6>
+      </div>
+       <div id="pic31">
+  <img src="10.jpg" alt="img" style="height: 250px;width: 80%; ">
+      </div>
+      <div id="details">
+          <h6>white dress</h6>
+          <h6><b>RS.1345</b></h6>
+      </div>
+       <div id="pic32">
+  <img src="11.jpg" alt="img" style="height: 250px;width: 80%; ">
+      </div>
+      <div id="details">
+          <h6>blue long dress</h6>
+          <h6><b>Rs.1445</b></h6>
+      </div>
+</div>
+    </div>
+  </div>
+</div>
+    </div>
+    </body>
+</html>
